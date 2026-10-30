@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <locale>
+#include <vector>
 using namespace std;
 
 void aceleradorParticulas(){
@@ -123,6 +124,18 @@ void teseractoSimulado() {
     }
     delete[] teseracto;
 }
+void genoma() {
+    int n;
+    cout << "BIENVENIDO AL SIMULADOR DE GENOMA" << endl;
+    do {
+        cout << "Ingrese tamaño de la cadena de ADN en la simulación (número par entre mayor a 20): ";
+        cin >> n;
+    } while (n <= 20 || n % 2 != 0);
+
+    srand(time(0));
+    vector<char> helice1;
+    vector<char> helice2;
+    char nucleotidos[4] = { 'A', 'T', 'C', 'G' };
 
 
 
@@ -144,15 +157,21 @@ int main() {
             case 1:
                 cout << " Acelerador de Particulas " << endl;
                 aceleradorParticulas();
+                break;
 
             case 2:
                 cout << " Teseracto Simulado " << endl;
+                teseractoSimulado();
+                break;
 
             case 3:
                 cout << " Simulador de Cadenas Genoma " << endl;
 
+                break;
+
             case 0:
                 cout << " Saliendo del programa " << endl;
+                break;
 
             default:
                 cout << " La opción es invalida " << endl;
