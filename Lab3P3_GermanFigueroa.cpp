@@ -137,6 +137,29 @@ void genoma() {
     vector<char> helice2;
     char nucleotidos[4] = { 'A', 'T', 'C', 'G' };
 
+    for (int i = 0; i < n; i++) {
+        char n1 = nucleotidos[rand() % 4];
+        char n2;
+        if (n1 == 'A') n2 = 'T';
+        else if (n1 == 'T') n2 = 'A';
+        else if (n1 == 'C') n2 = 'G';
+        else n2 = 'C';
+
+        helice1.push_back(n1);
+        helice2.push_back(n2);
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << "[" << helice1[i] << "]";
+        int espacios = (i % 5) + 1;
+        for (int j = 0; j < espacios; j++) {
+            cout << "-";
+        }
+        cout << "[" << helice2[i] << "]" << endl;
+    }
+}
+
+
 
 
 int main() {
